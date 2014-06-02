@@ -1,5 +1,5 @@
 <?php 
-$con=mysqli_connect("localhost","root","pop@123","copart_analytics");
+$con=mysqli_connect("localhost","root","pop@123","derex");
 // Check connection
 if (mysqli_connect_errno())
   {

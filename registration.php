@@ -13,18 +13,10 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -71,7 +63,7 @@
          <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a href="docs/getuser_data.php" style="color:#2a6496">Get User Info</a>
+              <a href="getuser_data.php" style="color:#2a6496">Get User Info</a>
             </h4>
           </div>
         </div>
@@ -83,6 +75,7 @@
             </h4>
           </div>
         </div>
+
 
        <div class="panel panel-default">
           <div class="panel-heading">
@@ -96,22 +89,33 @@
       </div>
         </div>
 
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-          
-          <div class="table-responsive">
-              <div class="jumbotron">
+    <div class="container">
 
-              <p class="lead">Welcome</p>
-                <!--<p class="lead">Click below for creating Tables & Inserting data</p>
-                <p><a class="btn btn-lg btn-success" href="create_push.php" role="button">Create</a></p>
-                -->
-              </div>
-          </div>
+       <form class="form-signin" role="form"  enctype="multipart/form-data" action="upload.php" method="POST">
+           <h4 class="form-signin-heading">
+             <?php 
+             /*if($_REQUEST['msg'] !=""){
+              if($_REQUEST['msg'] == "success")
+                {echo "Thank you for applying to our job posting! Your resume has been forwarded for review.
+If we consider you to be a potential match for this role or any of our open job requirements, then one of our technical recruiters will contact you to discuss in greater detail. Otherwise we will keep your information in our internal database for future job requirements.";}
+              else if($_REQUEST['msg'] =="fail")
+                {echo "Resume not Uploaded Failure";}
+              }*/
+            ?></h4>
 
-        </div>
-      </div>
-    </div>
+          <h2 class="form-signin-heading">Form</h2>
+          <input type="text" name="firstname" class="form-control" placeholder="FirstName" required>
+          <input type="text" name="lastname" class="form-control" placeholder="LastName" required>
+          <input type="text" name="phonenumber" class="form-control" placeholder="Phone" required>
+          <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+          <input type="hidden" name="MAX_FILE_SIZE" value="512000000000000000000" />
+          <input type="file" name="userfile" class="form-control" placeholder="Password" required>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+
+      </form>
+
+    </div> <!-- /container -->
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

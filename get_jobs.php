@@ -71,7 +71,7 @@
          <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a href="docs/getuser_data.php" style="color:#2a6496">Get User Info</a>
+              <a href="getuser_data.php" style="color:#2a6496">Get User Info</a>
             </h4>
           </div>
         </div>
@@ -84,31 +84,58 @@
           </div>
         </div>
 
-       <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a href="docs/getjobs.php" style="color:#2a6496">Get Post Jobs</a>
-            </h4>
-          </div>
+      </div>
+      </div>
         </div>
 
-      </div>
-      </div>
-        </div>
+    <div class="container-fluid">
+      <div class="row">
 
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-          
+      <?php 
+      
+      include('database.php');
+        $result = mysqli_query($con, "SELECT * FROM  jobs");
+      ?>         
+          <h2 class="sub-header">Jobs Data : 
+          <?php echo $num_rows = mysqli_num_rows($result); ?></h2>
           <div class="table-responsive">
-              <div class="jumbotron">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>User Id</th>
+                  <th>Job Type</th>
+                  <th>Job Title</th>
+                  <th>Location</th>
+                  <th>skills</th>
+                  <th>Duration</th>
+                  <th>Mandotary Skills</th>
+                  <th>Desire Skills</th>
+                  <th>Created Date</th>
 
-              <p class="lead">Welcome</p>
-                <!--<p class="lead">Click below for creating Tables & Inserting data</p>
-                <p><a class="btn btn-lg btn-success" href="create_push.php" role="button">Create</a></p>
-                -->
-              </div>
+                </tr>
+              </thead>
+              <tbody>
+              <?php
+              while($row = mysqli_fetch_array($result))
+        		{?>
+                <tr>
+                  <td><?php echo $row['sno'];?></td>
+                  <td><?php echo $row['job_type'];?></td>
+                  <td><?php echo $row['job_title'];?></td>
+                  <td><?php echo $row['location'];?></td>
+                  <td><?php echo $row['skills'];?></td>
+                  <td><?php echo $row['duration'];?></td>
+                  <td><?php echo $row['mandotary_skills'];?></td>
+                  <td><?php echo $row['desire_skills'];?></td>
+                  <td><?php echo $row['created_date'];?></td>
+
+                </tr>
+        		<?php }
+                ?>
+              </tbody>
+            </table>
           </div>
-
         </div>
       </div>
     </div>

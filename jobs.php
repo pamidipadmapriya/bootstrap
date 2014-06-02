@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,22 +8,14 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Dashboard</title>
+    <title>Post JOBs</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/signin.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -60,7 +51,7 @@
         <div class="bs-example">
           <div class="panel-group" id="accordion">
 
-         <div class="panel panel-default">
+          <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
               <a href="registration.php" style="color:#2a6496">Registration</a>
@@ -71,7 +62,7 @@
          <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a href="docs/getuser_data.php" style="color:#2a6496">Get User Info</a>
+              <a href="getuser_data.php" style="color:#2a6496">Get User Info</a>
             </h4>
           </div>
         </div>
@@ -83,35 +74,29 @@
             </h4>
           </div>
         </div>
-
-       <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a href="docs/getjobs.php" style="color:#2a6496">Get Post Jobs</a>
-            </h4>
-          </div>
-        </div>
-
       </div>
       </div>
         </div>
 
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
-          
-          <div class="table-responsive">
-              <div class="jumbotron">
+    <div class="container">
 
-              <p class="lead">Welcome</p>
-                <!--<p class="lead">Click below for creating Tables & Inserting data</p>
-                <p><a class="btn btn-lg btn-success" href="create_push.php" role="button">Create</a></p>
-                -->
-              </div>
-          </div>
+       <form class="form-signin" role="form"  action="postjobs.php" method="POST">
 
-        </div>
-      </div>
-    </div>
+
+          <h2 class="form-signin-heading">Post Jobs</h2>
+          <input type="text" name="job_title" class="form-control" placeholder="Job Title" required autofocus>
+          <input type="text" name="job_type" class="form-control" placeholder="Job Type" required>
+          <input type="text" name="location" class="form-control" placeholder="Location" required>
+          <input type="text" name="skills" class="form-control" placeholder="Skills" required >
+          <input type="text" name="duration" class="form-control" placeholder="Duration" required>
+          <input type="text" name="mandotary_skills" class="form-control" placeholder="Mandatory Skills/Experience" required>
+          <input type="text" name="desire_skills" class="form-control" placeholder="Desirable Skills/Experience" required >
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+
+      </form>
+
+    </div> <!-- /container -->
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
